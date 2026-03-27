@@ -32,6 +32,12 @@ const router = createRouter({
     { path: "/purchase-orders", component: PurchaseOrders, meta: { requiresAuth: true } },
     { path: "/inventory", component: InventoryPage, meta: { requiresAuth: true } },
     { path: "/customers", component: Customer, meta: { requiresAuth: true } },
+    {
+      path: "/businesses", component: Businesses, meta: { requiresAuth: true, role: "system_admin" }
+    },
+    {
+      path: "/system/reports", component: Report, meta: { requiresAuth: true, role: "system_admin" }
+    },
     { path: "/suppliers", component: Suppliers, meta: { requiresAuth: true } },
     { path: "/reports", component: Reports, meta: { requiresAuth: true } },
     { path: "/settings", component: Settings, meta: { requiresAuth: true } },

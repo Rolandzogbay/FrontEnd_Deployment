@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
-    "@vercel/analytics": "^2.0.1",
     "@vueuse/head": "^2.0.0",
     "aos": "^2.3.4",
     "apexcharts": "^5.6.0",

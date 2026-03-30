@@ -2,8 +2,8 @@ import axios from "axios";
 import { computed, ref } from "vue";
 
 // Prefer env in production, fallback in dev
-// const API_ROOT = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
-const API_ROOT = "http://localhost:5000/api";
+const API_ROOT = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+// const API_ROOT = "http://localhost:5000/api";
 const API_BASE_URL = `${API_ROOT}/products`;
 
 const PRODUCT_ARCHIVE_URL = (id) => `${API_BASE_URL}/${id}/archive`;

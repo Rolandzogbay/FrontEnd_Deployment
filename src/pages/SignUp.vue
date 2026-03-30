@@ -1,10 +1,10 @@
 <template>
   <div class="min-h-screen bg-slate-100 py-6 sm:py-10 px-4 sm:px-6 lg:px-8">
     <div
-      class="mx-auto grid w-full max-w-7xl grid-cols-1 overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:grid-cols-2">
+      class="mx-auto grid w-full max-w-8xl grid-cols-1 overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:grid-cols-2">
       <!-- Left Dynamic Brand Panel  -->
       <div
-        class="relative hidden md:flex flex-col justify-between overflow-hidden bg-gradient-to-br from-[#ea580c] via-[#f97316] to-[#fdba74] p-8 lg:p-10 text-white">
+        class="relative hidden md:flex flex-col justify-between overflow-hidden bg-linear-to-br from-[#ea580c] via-[#f97316] to-[#fdba74] p-8 lg:p-10 text-white">
         <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,white,transparent_35%)]"></div>
         <div class="absolute -bottom-24 -right-20 h-72 w-72 rounded-full bg-white/15 blur-3xl"></div>
         <div class="absolute top-10 right-10 h-32 w-32 rounded-full bg-white/10 blur-2xl"></div>

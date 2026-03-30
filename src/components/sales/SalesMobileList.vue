@@ -7,7 +7,7 @@
     >
       <div class="flex items-start justify-between gap-3">
         <div class="min-w-0">
-          <p class="font-bold text-slate-900">#SAL{{ String(sale.id).padStart(4, '0') }}</p>
+          <p class="font-bold text-slate-900">#SAL{{ String(sale.id).padStart(4, "0") }}</p>
           <p class="text-sm text-slate-700 truncate mt-1">{{ getCustomerDisplayName(sale) }}</p>
           <p class="text-xs text-slate-500 mt-1">{{ formatDateTime(sale.createdAt || sale.sale_date) }}</p>
         </div>

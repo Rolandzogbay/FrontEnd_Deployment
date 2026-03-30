@@ -15,6 +15,8 @@ import Customer from "@/pages/Customer.vue";
 import Reports from "@/pages/Reports.vue";
 import Settings from "@/pages/Settings.vue";
 import Suppliers from "@/pages/Suppliers.vue";
+import forgotPassword from "@/pages/forgotPassword.vue";
+import resetPassword from "@/pages/resetPassword.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +34,8 @@ const router = createRouter({
     { path: "/purchase-orders", component: PurchaseOrders, meta: { requiresAuth: true } },
     { path: "/inventory", component: InventoryPage, meta: { requiresAuth: true } },
     { path: "/customers", component: Customer, meta: { requiresAuth: true } },
+    { path: "/forgot-password", component: forgotPassword, meta: { public: true } },
+    { path: "/reset-password", component: resetPassword, meta: { public: true } },
     { path: "/suppliers", component: Suppliers, meta: { requiresAuth: true } },
     { path: "/reports", component: Reports, meta: { requiresAuth: true } },
     { path: "/settings", component: Settings, meta: { requiresAuth: true } },

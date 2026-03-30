@@ -5,6 +5,7 @@
                 <tr class="text-left text-sm text-slate-600">
                     <th class="px-6 py-4 font-semibold">#</th>
                     <th class="px-6 py-4 font-semibold">Order Details</th>
+                    <th class="px-6 py-4 font-semibold">Items</th>
                     <th class="px-6 py-4 font-semibold">Payment</th>
                     <th class="px-6 py-4 font-semibold">Status</th>
                     <th class="px-6 py-4 font-semibold">Amount</th>
@@ -28,12 +29,21 @@
 
                             <div class="min-w-0">
                                 <p class="font-semibold text-slate-900 truncate">{{ getCustomerDisplayName(sale) }}</p>
-                                <p class="text-xs text-slate-500 mt-1">#SAL{{ String(sale.id).padStart(4, '0') }}</p>
+                                <p class="text-xs text-slate-500 mt-1">#SAL{{ String(sale.id).padStart(4, "0") }}</p>
                                 <p class="text-xs text-slate-400 mt-1">
                                     <i class="fa-regular fa-clock mr-1"></i>
                                     {{ formatDateTime(sale.createdAt || sale.sale_date) }}
                                 </p>
                             </div>
+                        </div>
+                    </td>
+
+                    <td class="px-6 py-5">
+                        <div>
+                            <p class="font-medium text-slate-800">{{ formatSaleItemsSummary(sale) }}</p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                {{ sale.items?.length || 0 }} item(s)
+                            </p>
                         </div>
                     </td>
 
@@ -93,6 +103,7 @@ defineProps({
     formatDateTime: Function,
     formatPaymentMethod: Function,
     formatMoney: Function,
+    formatSaleItemsSummary: Function,
 });
 
 defineEmits(["view", "print", "delete"]);

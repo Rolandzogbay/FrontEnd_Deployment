@@ -1,4 +1,3 @@
-// src/composables/useSalesHelpers.js
 export function useSalesHelpers(customers, auth, receiptBusiness) {
     const formatPaymentMethod = (method) => {
         const map = {
@@ -29,6 +28,16 @@ export function useSalesHelpers(customers, auth, receiptBusiness) {
             currency: "USD",
             minimumFractionDigits: 2,
         }).format(Number(value || 0));
+    };
+
+    const formatProductCode = (value) => {
+        const code = String(value || "").trim();
+        return code || "No product code";
+    };
+
+    const formatBarcode = (value) => {
+        const barcode = String(value || "").trim();
+        return barcode || "No barcode";
     };
 
     const getBusinessDisplayName = (sale) => {
@@ -116,6 +125,22 @@ export function useSalesHelpers(customers, auth, receiptBusiness) {
         return "No items";
     };
 
+    const getItemDisplayName = (item) => {
+        return item?.name || item?.product?.name || `Product #${item?.productId || "N/A"}`;
+    };
+
+    const getItemProductCode = (item) => {
+        return item?.sku || item?.product?.sku || "";
+    };
+
+    const getItemBarcode = (item) => {
+        return item?.barcode || item?.product?.barcode || "";
+    };
+
+    const getItemCategory = (item) => {
+        return item?.category || item?.product?.category || "";
+    };
+
     const escapeHtml = (value) => {
         return String(value ?? "")
             .replaceAll("&", "&amp;")
@@ -129,12 +154,18 @@ export function useSalesHelpers(customers, auth, receiptBusiness) {
         formatPaymentMethod,
         formatDateTime,
         formatMoney,
+        formatProductCode,
+        formatBarcode,
         getBusinessDisplayName,
         getCustomerDisplayName,
         getCustomerEmail,
         getCustomerPhone,
         isWalkInCustomer,
         formatSaleItemsSummary,
+        getItemDisplayName,
+        getItemProductCode,
+        getItemBarcode,
+        getItemCategory,
         escapeHtml,
     };
 }

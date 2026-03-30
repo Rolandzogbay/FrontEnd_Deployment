@@ -157,6 +157,24 @@ export const useAuthStore = defineStore("auth", {
       }
     },
 
+    async forgotPassword(email) {
+      this.loading = true;
+      try {
+        const { data } = await authService.forgotPassword(email);
+        return data;
+      } finally {
+        this.loading = false
+      }
+    },
+    async resetPassword(payload) {
+      this.loading = true
+      try {
+        const { data } = await authService.resetPassword(payload);
+        return data;
+      } finally {
+        this.loading = false;
+      }
+    },
     async logout() {
       try {
         await authService.logOut();

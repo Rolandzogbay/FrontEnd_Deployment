@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-slate-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-6">
     <div
-      class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-3xl bg-white shadow-xl border border-slate-100">
+      class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-3xl bg-white shadow-xl border border-slate-100">
       <!-- Left: Brand / Illustration -->
       <div
         class="relative hidden md:block overflow-hidden bg-linear-to-br from-[#f97316] via-[#fb923c] to-[#fdba74] p-8 text-white lg:p-10">

@@ -18,7 +18,12 @@ const authService = {
   resendVerificationEmail(email) {
     return api.post("/auth/resend-verification", { email });
   },
-
+  forgotPassword(email) {
+    return api.post("/auth/forgot-password", { email })
+  },
+  resetPassword(payload) {
+    return api.post("/auth/reset-password", payload)
+  },
   getProfile() {
     return api.get("/profile/me");
   },

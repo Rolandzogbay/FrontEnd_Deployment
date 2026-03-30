@@ -1,4 +1,3 @@
-// src/utils/salesNormalize.js
 export function normalizeArrayPayload(payload, keys = []) {
     if (Array.isArray(payload)) return payload;
 
@@ -28,15 +27,23 @@ export function normalizeItem(raw = {}) {
         raw.sub_total_price || raw.subtotal || raw.subTotal || quantity * unitPrice || 0
     );
 
+    const product = raw.product || null;
+
     return {
         ...raw,
         id: raw.id || null,
-        productId: Number(raw.productId || raw.product_id || raw.ProductId || raw.product?.id || 0),
-        name: raw.name || raw.product_name || raw.product?.name || "",
+        productId: Number(raw.productId || raw.product_id || raw.ProductId || product?.id || 0),
+        name: raw.name || raw.product_name || product?.name || "",
         quantity,
         unit_price: unitPrice,
         sub_total_price: subtotal,
-        product: raw.product || null,
+        barcode: raw.barcode || product?.barcode || "",
+        sku: raw.sku || product?.sku || "",
+        category: raw.category || product?.category || "",
+        unit: raw.unit || product?.unit || "",
+        track_expiry: !!(raw.track_expiry || product?.track_expiry),
+        expiry_date: raw.expiry_date || product?.expiry_date || null,
+        product,
     };
 }
 
